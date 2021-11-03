@@ -4,6 +4,9 @@ package Modelo;
 public class usuario {
     private int id_usuario;
     private String nombreUsuario;
+    private String telefono;
+    private String direccion;
+    private String sueldo;
     private String clave;
     private boolean estado;
     private cargo cargo;
@@ -23,6 +26,30 @@ public class usuario {
     public void setNombreUsuario(String nombreUsuario) {
         this.nombreUsuario = nombreUsuario;
     }
+            
+     public String getTelefono() {
+        return telefono;
+    }
+     
+     public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+    
+    public String getSueldo() {
+        return sueldo;
+    }
+
+    public void setSueldo(String sueldo) {
+        this.sueldo = sueldo;
+    }    
 
     public String getClave() {
         return clave;

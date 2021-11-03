@@ -52,14 +52,14 @@
                                 <!-- Menu Toggle Button -->
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                     <!-- The user image in the navbar-->
-                                    <img src="dist/img/user5-128x128.jpg" class="user-image" alt="User Image">
+                                    <img src="dist/img/user.jpg" class="user-image" alt="User Image">
                                     <!-- hidden-xs hides the username on small devices so only the image appears. -->
                                     <span class="hidden-xs">${empleado.nombreUsuario}</span>
                                 </a>
                                 <ul class="dropdown-menu">
                                     <!-- The user image in the menu -->
                                     <li class="user-header">
-                                        <img src="dist/img/user5-128x128.jpg" class="img-circle" alt="User Image">
+                                        <img src="dist/img/user.jpg" class="img-circle" alt="User Image">
 
                                         <p>                    
                                             Bienvenid@ - ${empleado.nombreUsuario}
@@ -87,7 +87,7 @@
                     <!-- Sidebar user panel (optional) -->
                     <div class="user-panel">
                         <div class="pull-left image">
-                            <img src="dist/img/user5-128x128.jpg" class="img-circle" alt="User Image">
+                            <img src="dist/img/user.jpg" class="img-circle" alt="User Image">
                         </div>
                         <div class="pull-left info">
                             <p>Bienvenid@, ${empleado.nombreUsuario}</p>

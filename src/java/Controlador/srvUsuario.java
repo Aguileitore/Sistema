@@ -191,11 +191,17 @@ public class srvUsuario extends HttpServlet {
         usuario usu = null;
         cargo carg;
         if (request.getParameter("txtNombre") != null
+                && request.getParameter("txtTelefono") != null
+                && request.getParameter("txtDireccion") != null
+                && request.getParameter("txtSueldo") != null
                 && request.getParameter("txtClave") != null
                 && request.getParameter("cboCargo") != null) {
 
             usu = new usuario();
             usu.setNombreUsuario(request.getParameter("txtNombre"));
+            usu.setTelefono(request.getParameter("txtTelefono"));
+            usu.setDireccion(request.getParameter("txtDireccion"));
+            usu.setSueldo(request.getParameter("txtSueldo"));
             usu.setClave(request.getParameter("txtClave"));
             carg = new cargo();
             carg.setCodigo(Integer.parseInt(request.getParameter("cboCargo")));
@@ -256,12 +262,18 @@ public class srvUsuario extends HttpServlet {
         
         if (request.getParameter("hCodigo") != null
                 && request.getParameter("txtNombre") != null
+                && request.getParameter("txtTelefono") != null
+                && request.getParameter("txtDireccion") != null
+                && request.getParameter("txtSueldo") != null
                 && request.getParameter("txtClave") != null
                 && request.getParameter("cboCargo") != null) {
             
             usus = new usuario();
             usus.setId_usuario(Integer.parseInt(request.getParameter("hCodigo")));
             usus.setNombreUsuario(request.getParameter("txtNombre"));
+            usus.setTelefono(request.getParameter("txtTelefono"));
+            usus.setDireccion(request.getParameter("txtDireccion"));
+            usus.setSueldo(request.getParameter("txtSueldo"));
             usus.setClave(request.getParameter("txtClave"));
             car = new cargo();
             car.setCodigo(Integer.parseInt(request.getParameter("cboCargo")));

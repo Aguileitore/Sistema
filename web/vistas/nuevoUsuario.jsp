@@ -52,14 +52,14 @@
                                 <!-- Menu Toggle Button -->
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                     <!-- The user image in the navbar-->
-                                    <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+                                    <img src="dist/img/admin.jpg" class="user-image" alt="User Image">
                                     <!-- hidden-xs hides the username on small devices so only the image appears. -->
                                     <span class="hidden-xs"> ${usuario.nombreUsuario}</span>
                                 </a>
                                 <ul class="dropdown-menu">
                                     <!-- The user image in the menu -->
                                     <li class="user-header">
-                                        <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                                        <img src="dist/img/admin.jpg" class="img-circle" alt="User Image">
 
                                         <p>                    
                                             Bienvenid@ - ${usuario.nombreUsuario}
@@ -87,7 +87,7 @@
                     <!-- Sidebar user panel (optional) -->
                     <div class="user-panel">
                         <div class="pull-left image">
-                            <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                            <img src="dist/img/admin.jpg" class="img-circle" alt="User Image">
                         </div>
                         <div class="pull-left info">
                             <p>Bienvenid@,  ${usuario.nombreUsuario} </p>
@@ -170,10 +170,39 @@
                                     <label class="col-sm-2 control-label">Nombre Usuario</label>
                                     <div class="col-sm-4 input-group">
                                         <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                                        <input id="nombre" type="text" class="form-control" placeholder="Ejem: Alexander" name="txtNombre" maxlength="10"
+                                        <input id="nombre" type="text" class="form-control" placeholder="Ejem: Camilo" name="txtNombre" maxlength="20"
                                                value="">
                                     </div>
                                 </div>
+                                
+                                
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">Teléfono</label>
+                                    <div class="col-sm-4 input-group">
+                                        <span class="input-group-addon"><i class="fa fa-phone-square"></i></span>
+                                        <input id="nombre" type="text" class="form-control" placeholder="Ejem: +57 3138379232" name="txtTelefono" maxlength="13"
+                                               value="">
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">Dirección</label>
+                                    <div class="col-sm-4 input-group">
+                                        <span class="input-group-addon"><i class="fa fa-address-book"></i></span>
+                                        <input id="nombre" type="text" class="form-control" placeholder="Ejem: CR 12 # 1-85" name="txtDireccion" maxlength="20"
+                                               value="">
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">Sueldo</label>
+                                    <div class="col-sm-4 input-group">
+                                        <span class="input-group-addon"><i class="fa fa-money"></i></span>
+                                        <input id="nombre" type="text" class="form-control" placeholder="Ejem: 2´500.000" name="txtSueldo" maxlength="20"
+                                               value="">
+                                    </div>
+                                </div>
+                                
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label">Clave</label>
                                     <div class="col-sm-4 input-group">

@@ -37,10 +37,10 @@ public class DAOUSUARIO extends Conexion {
         List<usuario> usuarios;
         usuario usu;
         ResultSet rs = null;
-        String sql = "SELECT U.IDUSUARIO, U.NOMBREUSUARIO, U.CLAVE, U.ESTADO, C.NOMBRECARGO "
+        String sql = "SELECT U.IDUSUARIO, U.NOMBREUSUARIO, U.TELEFONO, U.DIRECCION, U.SUELDO, U.CLAVE, U.ESTADO, C.NOMBRECARGO "
                 + "FROM usuario U INNER JOIN cargo C "
                 + "ON C.IDCARGO = U.IDCARGO "
-                + "ORDER BY U.IDUSUARIO";
+                + "ORDER BY U.IDUSUARIO";   
 
         try {
             this.conectar(false);
@@ -50,6 +50,9 @@ public class DAOUSUARIO extends Conexion {
                 usu = new usuario();
                 usu.setId_usuario(rs.getInt("IDUSUARIO"));
                 usu.setNombreUsuario(rs.getString("NOMBREUSUARIO"));
+                usu.setTelefono(rs.getString("TELEFONO"));
+                usu.setDireccion(rs.getString("DIRECCION"));
+                usu.setSueldo(rs.getString("SUELDO"));
                 usu.setClave(rs.getString("CLAVE"));
                 usu.setEstado(rs.getBoolean("ESTADO"));
                 usu.setCargo(new cargo());
@@ -66,8 +69,11 @@ public class DAOUSUARIO extends Conexion {
 
     public void registrarUsuarios(usuario usu) throws Exception {
         String sql;
-        sql = "INSERT INTO Usuario (NOMBREUSUARIO, CLAVE, ESTADO, IDCARGO) "
+        sql = "INSERT INTO Usuario (NOMBREUSUARIO, TELEFONO, DIRECCION, SUELDO, CLAVE, ESTADO, IDCARGO) "
                 + "VALUES ('" + usu.getNombreUsuario() + "', '"
+                + usu.getTelefono() + "', '"
+                + usu.getDireccion() + "', '"
+                + usu.getSueldo() + "', '"
                 + usu.getClave() + "', "
                 + (usu.isEstado() == true ? "1" : "0")
                 + ", " + usu.getCargo().getCodigo() + ")";
@@ -84,7 +90,7 @@ public class DAOUSUARIO extends Conexion {
     public usuario leerUsuario(usuario usu) throws Exception {
         usuario usus = null;
         ResultSet rs = null;
-        String sql = "SELECT U.IDUSUARIO, U.NOMBREUSUARIO, U.CLAVE, U.ESTADO, U.IDCARGO "
+        String sql = "SELECT U.IDUSUARIO, U.NOMBREUSUARIO, U.TELEFONO, U.DIRECCION, U.SUELDO, U.CLAVE, U.ESTADO, U.IDCARGO "
                 + "FROM usuario U WHERE U.IDUSUARIO = " + usu.getId_usuario();
 
         try {
@@ -94,6 +100,9 @@ public class DAOUSUARIO extends Conexion {
                 usus = new usuario();
                 usus.setId_usuario(rs.getInt("IDUSUARIO"));
                 usus.setNombreUsuario(rs.getString("NOMBREUSUARIO"));
+                usus.setTelefono(rs.getString("TELEFONO"));
+                usus.setDireccion(rs.getString("DIRECCION"));
+                usus.setSueldo(rs.getString("SUELDO"));
                 usus.setClave(rs.getString("CLAVE"));
                 usus.setEstado(rs.getBoolean("ESTADO"));
                 usus.setCargo(new cargo());
@@ -110,7 +119,10 @@ public class DAOUSUARIO extends Conexion {
     
     public void actualizarUsuarios(usuario usu) throws Exception{
         String sql = "UPDATE usuario SET NOMBREUSUARIO = '"
-                + usu.getNombreUsuario() + "', CLAVE = '"
+                + usu.getNombreUsuario() + "', TELEFONO = '"
+                + usu.getTelefono() + "', DIRECCION = '"
+                + usu.getDireccion() + "', SUELDO = '"
+                + usu.getSueldo() + "', CLAVE = '"
                 + usu.getClave() + "', ESTADO = "
                 + (usu.isEstado() == true ? "1": "0")
                 + ", IDCARGO = "
